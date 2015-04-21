@@ -1,8 +1,7 @@
 // Hsin-Ting Chen #1366957
 // CSE142 Section BL Spring 2015
 // HW3: Doddle April 21th
-// This program prints out a 
-
+// This program prints out some circles
 
 import java.awt.*;
 
@@ -89,5 +88,4 @@ public class Illusion
       g.drawLine(d, a);
       
       */
-
 }
