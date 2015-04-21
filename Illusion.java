@@ -17,50 +17,58 @@ public class Illusion
       g = panel.getGraphics();
       
       panel.setBackground(Color.GRAY);
-      firstShape(0, 0, 90, 3);
-      firstShape(120, 10, 90, 3);
-      firstShape(250, 50, 80, 5);
+            
+      drawCircle(new Point(0, 0), 90, 3, Color.RED, Color.BLACK);
+      drawCircle(new Point(120, 10), 90, 3, Color.RED, Color.BLACK);
+      drawCircle(new Point(250, 50), 80, 5, Color.RED, Color.BLACK);
       
-      rect(350, 20, 120, 120);
-      rect(230, 160, 200, 200);
-      rect(10, 120, 200, 200);
+      drawBox(new Point(350, 20), 120, 120, Color.LIGHT_GRAY, Color.RED);
+      drawBox(new Point(230, 160), 200, 200, Color.LIGHT_GRAY, Color.RED);
+      drawBox(new Point(10, 120), 200, 200, Color.LIGHT_GRAY, Color.RED);
       
       fourCircle();
    }
    
-   public static void firstShape(int x, int y, int s, int t)
+   public static void drawCircle(Point anchor, int diameter, int concentricCount, Color fillColor, Color lineColor)
    {  
-      g.setColor(Color.RED);
-      g.fillOval(x, y, s, s);
-         
+      g.setColor(fillColor);
       
-      g.setColor(Color.BLACK);
+      g.fillOval(anchor.x, anchor.y, diameter, diameter);         
       
+      g.setColor(lineColor);      
       
-      for (int i = 0; i <= t - 1; i++)
+      for (int i = 0; i <= concentricCount - 1; i++)
       {         
-         g.drawOval( s / (2 * t) * i + x, s / (2 * t) * i + y, s / t * (t - i) , s / t * (t - i));
-                        
-      }  
-      
+         g.drawOval(
+            diameter / (2 * concentricCount) * i + anchor.x,
+            diameter / (2 * concentricCount) * i + anchor.y,
+            diameter / concentricCount * (concentricCount - i) ,
+            diameter / concentricCount * (concentricCount - i)
+            );                        
+      }   
    }
    
-   public static void rect(int x, int y, int h, int w)
+   public static void drawBox(Point anchor, int h, int w, Color fillColor, Color lineColor)
    {
-      g.setColor(Color.LIGHT_GRAY);
-      g.fillRect( x, y, h, w);
+      g.setColor(fillColor);
+      
+      g.fillRect(anchor.x, anchor.y, h, w);
             
-      g.setColor(Color.RED);
-      g.drawRect( x, y, h, w);
+      g.setColor(lineColor);
+      
+      g.drawRect(anchor.x, anchor.y, h, w);
    
    }
    
    public static void fourCircle()   
    {      
-      firstShape(10, 120, 100, 10);
-      firstShape(110, 120, 100, 10);
-      firstShape(10, 220, 100, 10);
-      firstShape(110, 220, 100, 10);
+      drawCircle(new Point(10, 120), 100, 10, Color.RED, Color.BLACK);
+      
+      drawCircle(new Point(110, 120), 100, 10, Color.RED, Color.BLACK);
+      
+      drawCircle(new Point(10, 220), 100, 10, Color.RED, Color.BLACK);
+      
+      drawCircle(new Point(110, 220), 100, 10, Color.RED, Color.BLACK);
       
    }
 
