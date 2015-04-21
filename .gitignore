@@ -1,0 +1,11 @@
+##################################
+# exclude generated .class files #
+##################################
+# if this becomes a problem we   #
+# can just delete this.          #
+##################################
+# do you like this hashtag art   #
+# I'm so talents wow             #
+##################################
+
+*.class
