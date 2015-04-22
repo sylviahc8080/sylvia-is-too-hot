@@ -7,15 +7,11 @@
 import java.awt.*;
 
 public class Illusion 
-{
-   static DrawingPanel panel = new DrawingPanel(500, 400);
-   
-   static Graphics g;
-
+{   
    public static void main(String[] args) 
    {
-      g = panel.getGraphics();
-      
+      DrawingPanel panel = new DrawingPanel(500, 400);
+      Graphics g = panel.getGraphics();
       panel.setBackground(Color.GRAY);
             
       drawCircle(new Point(0, 0), 90, 3, Color.RED, Color.BLACK);
