@@ -2,6 +2,7 @@
 // CSE142 Section BL Spring 2015
 // HW3: Doddle April 21th
 // This program prints out some circles
+// hello
 
 import java.awt.*;
 
